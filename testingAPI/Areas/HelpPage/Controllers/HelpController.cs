@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using testingAPI.Areas.HelpPage.ModelDescriptions;
-using testingAPI.Areas.HelpPage.Models;
+using pokemonAPI.Areas.HelpPage.ModelDescriptions;
+using pokemonAPI.Areas.HelpPage.Models;
 
-namespace testingAPI.Areas.HelpPage.Controllers
+namespace pokemonAPI.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

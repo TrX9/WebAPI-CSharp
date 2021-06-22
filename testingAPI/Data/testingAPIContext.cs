@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace testingAPI.Data
+namespace pokemonAPI.Data
 {
-    public class testingAPIContext : DbContext
+    public class pokemonAPIContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,10 +15,10 @@ namespace testingAPI.Data
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public testingAPIContext() : base("name=testingAPIContext")
+        public pokemonAPIContext() : base("name=pokemonAPIContext")
         {
         }
 
-        public System.Data.Entity.DbSet<testingAPI.Models.Pokemon> Pokemons { get; set; }
+        public System.Data.Entity.DbSet<pokemonAPI.Models.Pokemon> Pokemons { get; set; }
     }
 }

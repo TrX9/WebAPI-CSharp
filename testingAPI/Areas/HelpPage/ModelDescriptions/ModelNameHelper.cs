@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace testingAPI.Areas.HelpPage.ModelDescriptions
+namespace pokemonAPI.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

@@ -1,4 +1,4 @@
-namespace testingAPI.Areas.HelpPage.ModelDescriptions
+namespace pokemonAPI.Areas.HelpPage.ModelDescriptions
 {
     public class SimpleTypeModelDescription : ModelDescription
     {

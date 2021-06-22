@@ -1,6 +1,6 @@
 using System;
 
-namespace testingAPI.Areas.HelpPage.ModelDescriptions
+namespace pokemonAPI.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

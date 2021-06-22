@@ -6,12 +6,12 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Web.Mvc;
-using testingAPI.Models;
+using pokemonAPI.Models;
 using CsvHelper;
 using System.Text.RegularExpressions;
 using PagedList;
 
-namespace testingAPI.Services
+namespace pokemonAPI.Services
 {
     public static class PokemonService
     {

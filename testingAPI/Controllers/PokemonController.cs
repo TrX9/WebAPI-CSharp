@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using testingAPI.Models;
-using testingAPI.Services;
+using pokemonAPI.Models;
+using pokemonAPI.Services;
 using PagedList;
 
-namespace testingAPI.Controllers
+namespace pokemonAPI.Controllers
 {
 
     public class PokemonController : ApiController

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using testingAPI.Areas.HelpPage.ModelDescriptions;
-using testingAPI.Areas.HelpPage.Models;
+using pokemonAPI.Areas.HelpPage.ModelDescriptions;
+using pokemonAPI.Areas.HelpPage.Models;
 
-namespace testingAPI.Areas.HelpPage
+namespace pokemonAPI.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

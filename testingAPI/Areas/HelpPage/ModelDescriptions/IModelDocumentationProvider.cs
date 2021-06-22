@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace testingAPI.Areas.HelpPage.ModelDescriptions
+namespace pokemonAPI.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

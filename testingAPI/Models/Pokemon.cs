@@ -7,7 +7,7 @@ using System.Web;
 using CsvHelper;
 using CsvHelper.Configuration.Attributes;
 
-namespace testingAPI.Models
+namespace pokemonAPI.Models
 {
 
 

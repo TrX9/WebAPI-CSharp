@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace testingAPI.Areas.HelpPage
+namespace pokemonAPI.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

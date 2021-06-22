@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace testingAPI.Areas.HelpPage.ModelDescriptions
+namespace pokemonAPI.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

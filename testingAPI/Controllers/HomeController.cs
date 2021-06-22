@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
-using testingAPI.Models;
-using testingAPI.Services;
+using pokemonAPI.Models;
+using pokemonAPI.Services;
 
-namespace testingAPI.Controllers
+namespace pokemonAPI.Controllers
 {
     public class HomeController : Controller
     {
