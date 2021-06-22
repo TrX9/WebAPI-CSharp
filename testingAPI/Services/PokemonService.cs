@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using testingAPI.Models;
 using CsvHelper;
 using System.Text.RegularExpressions;
+using PagedList;
 
 namespace testingAPI.Services
 {
@@ -50,6 +51,14 @@ namespace testingAPI.Services
         public static Pokemon Get(string Name)
         {
             return Pokemons.FirstOrDefault(p => p.Name == Name);
+        }
+
+        public static PagedList<Pokemon> Get(int page)
+        {
+            int pageSize = 10;
+            IPagedList<Pokemon> PokePagedList = null;
+            PokePagedList = Pokemons.ToPagedList(page, pageSize);
+            return (PagedList<Pokemon>)PokePagedList;
         }
     }
 }

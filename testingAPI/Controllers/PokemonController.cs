@@ -2,6 +2,7 @@
 using System.Web.Http;
 using testingAPI.Models;
 using testingAPI.Services;
+using PagedList;
 
 namespace testingAPI.Controllers
 {
@@ -28,5 +29,15 @@ namespace testingAPI.Controllers
 
             return pokemon;
         }
+
+        [Route("pokemon")]
+        [HttpGet]
+        public IPagedList<Pokemon> Get(int page)
+        {
+            var pokemon = PokemonService.Get(page);
+
+            return pokemon;
+        }
+
     }
 }
