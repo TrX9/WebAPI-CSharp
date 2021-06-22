@@ -47,9 +47,9 @@ namespace testingAPI.Services
             return Pokemons;
         }
 
-        public static Pokemon Get(int id)
+        public static Pokemon Get(string Name)
         {
-            return Pokemons.FirstOrDefault(p => p.Id == id);
+            return Pokemons.FirstOrDefault(p => p.Name == Name);
         }
     }
 }

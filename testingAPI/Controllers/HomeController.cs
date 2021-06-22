@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using testingAPI.Models;
+using testingAPI.Services;
 
 namespace testingAPI.Controllers
 {
@@ -16,11 +17,7 @@ namespace testingAPI.Controllers
     {
         public ActionResult Index()
         {
-            
                 return View();
-                               
-            
-
         }
         
     }
