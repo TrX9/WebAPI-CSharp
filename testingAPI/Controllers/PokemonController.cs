@@ -17,13 +17,6 @@ namespace pokemonAPI.Controllers
 
         }
 
-        //[Route("pokemon")]  //Get all pokemon
-        //[HttpGet]
-        //public List<Pokemon> GetAll()
-        //{
-        //    return PokemonService.GetAll();
-        //}
-
         [Route("pokemon")]  //Search by name
         [HttpGet]
         public Pokemon Get(string Name)   //URI will be like this: ..../pokemon?name=xxxx
@@ -42,19 +35,13 @@ namespace pokemonAPI.Controllers
             return pokemon;
         }
 
-        [Route("pokemon")]  //Filtering by HP, Attk & Def
+        [Route("pokemon")]  //Filtering by HP, Attack & Defense
         [HttpGet]
-        public List<Pokemon> Get()  //URI will be like this: e.g. ` ..../pokemon?hp[gte]=100&defense[lte]=200`
+        public List<Pokemon> Get()  //URI will be like this: e.g. ` ..../pokemon?hp[gte]=100&defense[lte]=200&attack[lte]=77`
         {
-            //var allUrlKeyValues = ControllerContext.Request.GetQueryNameValuePairs();
-            //var keys = allUrlKeyValues.ToString();
-            //string p1Val = allUrlKeyValues.LastOrDefault(x => x.Key == "hp.gte").Value;
-            //string p2Val = allUrlKeyValues.LastOrDefault(x => x.Key == "p2").Value;
-            //string p3Val = allUrlKeyValues.LastOrDefault(x => x.Key == "p3").Value;
-
             var filterList = new List<Tuple<string, string>>();
 
-            IEnumerable<KeyValuePair<string, string>> query = Request.GetQueryNameValuePairs();
+            IEnumerable<KeyValuePair<string, string>> query = Request.GetQueryNameValuePairs();   //here we take the values from the request and put them in a list to be sent to the method
             foreach (var pair in query)
             {
                 filterList.Add(new Tuple<string, string>(pair.Key, pair.Value));

@@ -10,6 +10,7 @@ using PagedList;
 
 namespace pokemonAPI.Services
 {
+    //Used Csvhelper to read and apply the conditions to the csv file
     public static class PokemonService
     {
         static List<Pokemon> Pokemons { get; }
@@ -45,13 +46,13 @@ namespace pokemonAPI.Services
             return Pokemons;
         }
 
-        public static Pokemon Get(string Name)
+        public static Pokemon Get(string Name)           //Gets the pokemon by name
         {
             return Pokemons.FirstOrDefault(p => p.Name == Name);
         }
 
-        public static PagedList<Pokemon> Get(int page)
-        {
+        public static PagedList<Pokemon> Get(int page)       //Gets a maximum of 10 pokemons based on the page requested 
+        {                                                    //Used pagedList package for quick paging.
             int pageSize = 10;
             IPagedList<Pokemon> PokePagedList = null;
             PokePagedList = Pokemons.ToPagedList(page, pageSize);
@@ -60,9 +61,9 @@ namespace pokemonAPI.Services
 
         public static List<Pokemon> Get(List<Tuple<string, string>> keysList)
         {
-            string hpO = null;
-            string attkO = null;
-            string defO = null;
+            string hpO = "g"; //HP operator(greater or less than)
+            string attkO = "g";                                            //we will iterate on the contents of the request and check what is the user requesting
+            string defO = "g";                                             // then we will save each value and key to its declared variable to make it easier to work with and filter the data
             int hp = 0;
             int attk = 0; 
             int def = 0;
@@ -88,7 +89,11 @@ namespace pokemonAPI.Services
 
             }
 
-            if (hpO == "g" && attkO == "l" && defO == "g")
+            if (hpO == "g" && attkO == "g" && defO == "g")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP >= hp).Where(p => p.Attack >= attk).Where(p => p.Defense >= def)).ToList();
+            }
+            else if (hpO == "g" && attkO == "l" && defO == "g")
             {
                 PokemonsFiltered = (Pokemons.Where(p => p.HP >= hp).Where(p => p.Attack <= attk).Where(p => p.Defense >= def)).ToList();
             }
