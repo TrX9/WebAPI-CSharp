@@ -60,8 +60,13 @@ namespace pokemonAPI.Services
 
         public static List<Pokemon> Get(List<Tuple<string, string>> keysList)
         {
-            string hpO, attkO, defO;
-            int hp, attk, def;
+            string hpO = null;
+            string attkO = null;
+            string defO = null;
+            int hp = 0;
+            int attk = 0; 
+            int def = 0;
+            List<Pokemon> PokemonsFiltered = null;
 
             for (int i = 0; i < keysList.Count; i++)
             {
@@ -83,8 +88,32 @@ namespace pokemonAPI.Services
 
             }
 
+            if (hpO == "g" && attkO == "l" && defO == "g")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP >= hp).Where(p => p.Attack <= attk).Where(p => p.Defense >= def)).ToList();
+            }
+            else if (hpO == "g" && attkO == "g" && defO == "l")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP >= hp).Where(p => p.Attack >= attk).Where(p => p.Defense <= def)).ToList();
+            }
+            else if (hpO == "l" && attkO == "g" && defO == "g")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP <= hp).Where(p => p.Attack >= attk).Where(p => p.Defense >= def)).ToList();
+            }
+            else if (hpO == "l" && attkO == "l" && defO == "g")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP <= hp).Where(p => p.Attack <= attk).Where(p => p.Defense >= def)).ToList();
+            }
+            else if  (hpO == "g" && attkO == "l" && defO == "l")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP >= hp).Where(p => p.Attack <= attk).Where(p => p.Defense <= def)).ToList();
+            }
+            else if  (hpO == "l" && attkO == "l" && defO == "l")
+            {
+                PokemonsFiltered = (Pokemons.Where(p => p.HP <= hp).Where(p => p.Attack <= attk).Where(p => p.Defense <= def)).ToList();
+            }
 
-                return Pokemons;
+                return PokemonsFiltered;
         }
     }
 }
