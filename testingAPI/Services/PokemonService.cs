@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Web.Mvc;
 using pokemonAPI.Models;
 using CsvHelper;
 using System.Text.RegularExpressions;
@@ -59,6 +56,35 @@ namespace pokemonAPI.Services
             IPagedList<Pokemon> PokePagedList = null;
             PokePagedList = Pokemons.ToPagedList(page, pageSize);
             return (PagedList<Pokemon>)PokePagedList;
+        }
+
+        public static List<Pokemon> Get(List<Tuple<string, string>> keysList)
+        {
+            string hpO, attkO, defO;
+            int hp, attk, def;
+
+            for (int i = 0; i < keysList.Count; i++)
+            {
+                if (keysList[i].Item1.Substring(0, 1) == "h")
+                {
+                    hp = int.Parse(keysList[i].Item2);
+                    hpO = keysList[i].Item1.Substring(3, 1);
+                } 
+                else if (keysList[i].Item1.Substring(0, 1) == "a")
+                {
+                    attk = int.Parse(keysList[i].Item2);
+                    attkO = keysList[i].Item1.Substring(7, 1);
+                }
+                else if (keysList[i].Item1.Substring(0, 1) == "d")
+                {
+                    def = int.Parse(keysList[i].Item2);
+                    defO = keysList[i].Item1.Substring(8, 1);
+                }
+
+            }
+
+
+                return Pokemons;
         }
     }
 }
